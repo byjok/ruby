@@ -1,0 +1,6 @@
+task :default => [:test]
+
+task :test do
+	cucumber --require 'features/step_definitions features/tests/searchPhone.feature'
+end	
+	
