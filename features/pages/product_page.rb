@@ -1,6 +1,9 @@
 class ProductPage
+  include PageObject
   def selectors
-    @product_title = {xpath: "//li[@id='result_0']//div[@class='a-row a-spacing-mini']//a"}
+    @product_title = {css: "#idproductTitle"}
+    @add_to_cart_button = {css: "#add-to-cart-button" }
+    @go_to_cart_button = {css: "#nav-cart"}
   end
 
   def initialize(driver)
@@ -8,8 +11,21 @@ class ProductPage
     selectors
   end
 
-  def get_product_title
-    product_title =  @driver.find_element(@product_title).get_text()
-    return product_title
+  def get_product_color
+    product_title =  @driver.find_element(@product_title).text
+    title_details = product_title.split(',')
+    product_color = title_details[1]
+    product_color.delete(' ')
+    return product_color
   end
+
+  def click_on_add_to_cart_button
+    @driver.find_element(@add_to_cart_button).click
+  end
+
+  def go_to_cart
+    @driver.find_element(@go_to_cart_button).click
+  end
+
+
 end

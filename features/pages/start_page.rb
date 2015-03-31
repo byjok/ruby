@@ -1,7 +1,7 @@
 require 'page-object'
 
 class StartPage
-  
+ # include PageObject
 
 
   def selectors
