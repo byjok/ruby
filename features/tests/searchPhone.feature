@@ -10,7 +10,14 @@ Feature: Find Iphone.
 
     Examples:
     |searchTerm|colors|
-    |iphone 6  |Space Grey|
+    |iphone 6  |Space Gray|
+
+  Scenario: Click on add to cart and go to cart
+    Given I found iphone 6 and selected it
+    When I click add to cart button
+    And I go to cart page
+    Then I should see Iphone in cart
+#
 
 
 

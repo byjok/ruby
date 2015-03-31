@@ -19,7 +19,7 @@ And(/^I Select first result$/) do
 end
 
 Then(/I should see (.*) of phone$/) do |colors|
-  expect($product_page.get_product_color).to include(colors)
+  expect($product_page.is_product_color?(colors)).to be true
 end
 
 Given(/^I found (.*) and selected it$/) do |searchTerm|

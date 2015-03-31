@@ -1,4 +1,4 @@
-require 'page-object'
+
 
 class StartPage
  # include PageObject
